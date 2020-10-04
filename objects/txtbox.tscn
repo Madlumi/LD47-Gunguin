@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://art/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://script/txtbox.gd" type="Script" id=2]
+[ext_resource path="res://art/cutscene.png" type="Texture" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Node2D" type="Node2D"]
+z_index = 100
+script = ExtResource( 2 )
+
+[node name="ui" type="Panel" parent="."]
+self_modulate = Color( 0.384314, 0.384314, 0.384314, 0.278431 )
+anchor_bottom = 0.031
+margin_left = -128.0
+margin_top = 40.0
+margin_right = 128.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cutscene" type="Sprite" parent="ui"]
+visible = false
+position = Vector2( 128, -50 )
+z_index = 2
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 1024 )
+
+[node name="Label" type="Label" parent="ui"]
+visible = false
+anchor_right = 1.0
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "uwu uwu aaaaaaaaaaaaaaa a a a a a a a a a a a a"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

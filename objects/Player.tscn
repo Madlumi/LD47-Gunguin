@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://art/player.png" type="Texture" id=1]
+[ext_resource path="res://script/Player.gd" type="Script" id=2]
+[ext_resource path="res://script/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://script/Area.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.12334, 11.1362 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 5.32104
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -5 )
+texture = ExtResource( 1 )
+hframes = 9
+region_enabled = true
+region_rect = Rect2( 0, 0, 144, 32 )
+script = ExtResource( 3 )
+
+[node name="player" type="Area2D" parent="."]
+position = Vector2( -0.135262, -0.270555 )
+collision_layer = 30
+collision_mask = 30
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource( 2 )

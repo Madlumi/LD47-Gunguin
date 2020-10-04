@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/cloud.png" type="Texture" id=1]
+[ext_resource path="res://script/cloud.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="cloud" type="StaticBody2D"]
+z_index = -2
+script = ExtResource( 2 )
+
+[node name="cloud" type="Sprite" parent="."]
+self_modulate = Color( 0.901961, 0.317647, 1, 1 )
+texture = ExtResource( 1 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true

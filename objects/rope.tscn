@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/rope.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="rope" type="Node2D"]
+script = ExtResource( 1 )
+pieces = 20
+
+[node name="Anchor" type="StaticBody2D" parent="."]
+
+[node name="col" type="CollisionShape2D" parent="Anchor"]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="joint" type="PinJoint2D" parent="Anchor/col"]
+bias = 0.9

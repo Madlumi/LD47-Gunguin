@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/player.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="link" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+mass = 0.102041
+angular_damp = 100.0
+
+[node name="col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="joint" type="PinJoint2D" parent="col"]
+bias = 0.865
+softness = 1.39
+
+[node name="sprite" type="Sprite" parent="col/joint"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="chainarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chainarea"]
+shape = SubResource( 2 )

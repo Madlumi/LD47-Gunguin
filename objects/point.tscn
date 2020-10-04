@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/point.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.25, 113.65 )
+
+[node name="point" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource( 1 )
+txt = [ "hewwo", "UwU", "What's this? OWO", "aaaaaa", "aaa" ]
+
+[node name="col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
